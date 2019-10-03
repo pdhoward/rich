@@ -5,7 +5,7 @@
         
         <div class="app-info">
             <div class="app-name">{{app.displayName}}</div>
-            <div class="app-poweredby">Built by <a target="_blank" rel="noopener noreferrer" href="https://dialogflow.cloud.ushakov.co">Strategic Machines</a></div>
+            <div class="app-poweredby">Built by <a target="_blank" rel="noopener noreferrer" href="https://github.com/pdhoward">Strategic Machines</a></div>
         </div>
     </header>
 </template>
