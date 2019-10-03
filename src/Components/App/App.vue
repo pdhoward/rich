@@ -332,6 +332,20 @@ export default {
         TableCard,
         Suggestion
     },
+    configObj: {
+        parent: "projects/dialogflow-web-v2",
+        displayName: "DialogflowWebV2",
+        defaultLanguageCode: "en",
+        supportedLanguageCodes: ["ru"],
+        timeZone: "Europe/Madrid",
+        description: "Strategic Machines delivers compelling feature-rich conversational experiences Choose your language and send \"Hello\" to get started",
+        avatarUri: "https://storage.googleapis.com/cloudprod-apiai/409650f9-9ecb-4ba7-af33-d95bd5190931_x.png",
+        enableLogging: true,
+        matchMode: "MATCH_MODE_HYBRID",
+        classificationThreshold: 0.3,
+        apiVersion: "API_VERSION_V2",
+        tier: "TIER_STANDARD"
+      },   
     data(){
         return {
             app: null,
@@ -343,13 +357,15 @@ export default {
             error: null
         }
     },
-    created(){
-        /* If history is enabled, the messages are retrieved from localStorage */
+    /*
+    created(){        
+        // If history is enabled, the messages are retrieved from localStorage 
+        
         if(this.history() && localStorage.getItem('message_history') !== null){
             this.messages = JSON.parse(localStorage.getItem('message_history'))
         }
 
-        /* Session should be persistent (in case of page reload, the context should stay) */
+        // Session should be persistent (in case of page reload, the context should stay) 
         if(this.history() && localStorage.getItem('session') !== null){
             this.session = localStorage.getItem('session')
         }
@@ -359,7 +375,7 @@ export default {
             if(this.history()) localStorage.setItem('session', this.session)
         }
 
-        /* Cache Agent (this will save bandwith) */
+        // Cache Agent (this will save bandwith) 
         if(this.history() && localStorage.getItem('agent') !== null){
             this.app = JSON.parse(localStorage.getItem('agent'))
         }
@@ -378,6 +394,12 @@ export default {
                 }
             })
         }
+    },
+    */
+    created(){
+            this.app = configObj
+            console.log(this.app)
+            if(this.history()) localStorage.setItem('agent', JSON.stringify(configObj))
     },
     computed: {
         /* The code below is used to extract suggestions from last message, to display it on ChatInput */
@@ -452,7 +474,7 @@ export default {
                 if(!response.error){
                     this.messages.push(response)
                     this.handle(response) // <- trigger the handle function (explanation below)
-                    //console.log(response) // <- (optional) log responses
+                    console.log(response) // <- (optional) log responses
                 }
 
                 else {

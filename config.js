@@ -10,11 +10,18 @@ export default {
     },
     i18n: {
         en: {
-            welcomeTitle: "Welcome to",
+            welcomeTitle: "Rich Communication Services Emulator",
             muteTitle: "Mute Toggle",
             inputTitle: "Type your message",
             sendTitle: "Send",
             microphoneTitle: "Voice Input"
+        },
+        fr: {
+            welcomeTitle: "Bienvenue à",
+            muteTitle: "Sound Mode",
+            inputTitle: "Entrez votre message",
+            sendTitle: "Envoyer",
+            microphoneTitle: "Entrée vocale"
         },
         ru: {
             welcomeTitle: "Добро пожаловать в",
@@ -29,13 +36,7 @@ export default {
             inputTitle: "Schreiben Sie ihre Nachricht",
             sendTitle: "Senden",
             microphoneTitle: "Spracheingabe"
-        },
-        fr: {
-            welcomeTitle: "Bienvenue à",
-            muteTitle: "Sound Mode",
-            inputTitle: "Entrez votre message",
-            sendTitle: "Envoyer",
-            microphoneTitle: "Entrée vocale"
         }
+        
     }
 }
