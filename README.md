@@ -3,6 +3,8 @@
 # Cogntiive Interaction (mocked)
 
 > 
+https://stackoverflow.com/questions/40360109/content-security-policy-img-src-self-data
+
 
 
 ## Features
